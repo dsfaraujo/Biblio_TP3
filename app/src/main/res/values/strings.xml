@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Biblio_TP3</string>
+
+    <string-array name="spinner_recherche">
+        <item>«Séléctionner»</item>
+        <item>Titre</item>
+        <item>Auteur</item>
+        <item>Genre</item>
+        <item>Langue</item>
+
+    </string-array>
+</resources>

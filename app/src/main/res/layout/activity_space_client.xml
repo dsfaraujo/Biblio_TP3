@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.eleves.biblio_tp3.SpaceClient">
+
+    <QuickContactBadge
+        android:id="@+id/quickContactBadge"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="22dp"
+        android:background="@color/colorAccent"
+        app:srcCompat="@android:drawable/sym_def_app_icon" />
+
+    <EditText
+        android:id="@+id/prenomClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_alignBottom="@+id/quickContactBadge"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/prenomClient"
+        android:layout_alignLeft="@+id/prenomClient"
+        android:layout_alignStart="@+id/prenomClient"
+        android:text="Prenom:"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/prenomClient"
+        android:layout_alignStart="@+id/prenomClient"
+        android:layout_below="@+id/prenomClient"
+        android:text="Nom:"
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/nomClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView6"
+        android:layout_alignStart="@+id/textView6"
+        android:layout_below="@+id/textView6"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/nomClient"
+        android:layout_alignStart="@+id/nomClient"
+        android:layout_below="@+id/nomClient"
+        android:text="Courriel"
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/courrielClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/textView8"
+        android:layout_alignLeft="@+id/textView8"
+        android:layout_alignStart="@+id/textView8"
+        android:layout_alignRight="@+id/idClient"
+        android:layout_alignEnd="@+id/idClient" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/courrielClient"
+        android:layout_alignStart="@+id/courrielClient"
+        android:layout_below="@+id/courrielClient"
+        android:text="Date de naissance:"
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/dtNaissanceClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView9"
+        android:layout_alignStart="@+id/textView9"
+        android:layout_below="@+id/textView9"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_alignRight="@+id/courrielClient"
+        android:layout_alignEnd="@+id/courrielClient" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/dtNaissanceClient"
+        android:layout_alignStart="@+id/dtNaissanceClient"
+        android:layout_below="@+id/dtNaissanceClient"
+        android:text="Téléphone:"
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/telClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView10"
+        android:layout_alignStart="@+id/textView10"
+        android:layout_below="@+id/textView10"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_alignRight="@+id/dtNaissanceClient"
+        android:layout_alignEnd="@+id/dtNaissanceClient" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/telClient"
+        android:layout_alignStart="@+id/telClient"
+        android:layout_below="@+id/telClient"
+        android:text="Adresse"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/buttonModifierClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Modifier"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/adresseClient"
+        android:layout_alignStart="@+id/adresseClient" />
+
+    <Button
+        android:id="@+id/buttonAnnuler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonModifierClient"
+        android:layout_alignBottom="@+id/buttonModifierClient"
+        android:layout_alignEnd="@+id/adresseClient"
+        android:layout_alignRight="@+id/adresseClient"
+        android:text="Annuler" />
+
+    <EditText
+        android:id="@+id/adresseClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_below="@+id/textView3"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_alignRight="@+id/telClient"
+        android:layout_alignEnd="@+id/telClient" />
+
+    <TextView
+        android:id="@+id/idClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Id Client"
+        android:layout_alignTop="@+id/nomClient"
+        android:layout_alignRight="@+id/quickContactBadge"
+        android:layout_alignEnd="@+id/quickContactBadge" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID:"
+        android:layout_alignTop="@+id/nomClient"
+        android:layout_toLeftOf="@+id/quickContactBadge"
+        android:layout_toStartOf="@+id/quickContactBadge" />
+
+</android.widget.RelativeLayout>
