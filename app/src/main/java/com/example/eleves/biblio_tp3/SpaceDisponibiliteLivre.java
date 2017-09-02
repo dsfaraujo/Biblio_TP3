@@ -1,5 +1,8 @@
 package com.example.eleves.biblio_tp3;
 
+/**
+ * Created by Diana on 7/31/2017.
+ */
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -15,7 +18,6 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -28,20 +30,17 @@ import java.util.List;
 
 import static com.example.eleves.biblio_tp3.Livros.livres;
 
-
+//  ----------------------------- Classe SpaceDisponibiliteLivre  -----------------------------
 public class SpaceDisponibiliteLivre extends AppCompatActivity {
     ArrayAdapter<LivreExPret> adapter;
     List<LivreExPret> livreExemplaire = new ArrayList<>();
-   LivreExPret numExemplaire = new LivreExPret();
+    LivreExPret numExemplaire = new LivreExPret();
     Button fairePret;
-
-
     public static Date date;
     public static Date dateFin;
     public static SimpleDateFormat formatDate;
     public static int joursPret = (86400 * 14 * 1000);
     public static int joursExtension = (86400 * 14 * 1000);
-
 
 
     @Override
@@ -56,11 +55,6 @@ public class SpaceDisponibiliteLivre extends AppCompatActivity {
         formatDate = new SimpleDateFormat("yyyy-MM-dd");
         dateFin = new Date(System.currentTimeMillis() + joursPret );
         fairePret = (Button)findViewById(R.id.buttonConfirmerPret);
-
-
-
-
-
 
         adapter = new ArrayAdapter<LivreExPret>(this, android.R.layout.simple_list_item_1, livreExemplaire) ;
         final ListView lv = (ListView) findViewById(R.id.listExemplaires);
@@ -84,21 +78,15 @@ public class SpaceDisponibiliteLivre extends AppCompatActivity {
 
                 if (livreExemplaire.get(position).getTitre() == null){
                     fairePret.setText("Réséerver Livre");
-
                 }
                 else{
                     fairePret.setText("Confirmer Prêt");
-
                 }
-
-
-
 
                 return view;
             }
         };
         lv.setAdapter(adapter);
-
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
@@ -108,10 +96,7 @@ public class SpaceDisponibiliteLivre extends AppCompatActivity {
                 for (int j = 0; j < adapterView.getChildCount(); j++)
                     adapterView.getChildAt(j).setBackgroundColor(Color.TRANSPARENT);
 
-                // change the background color of the selected element
                 view.setBackgroundColor(Color.LTGRAY);
-               //Intent intent2 = new Intent(Accueil.this, SpacePret.class);
-                //startActivity(intent2);
             }
         });
 
@@ -121,7 +106,6 @@ public class SpaceDisponibiliteLivre extends AppCompatActivity {
                 dateFin = new Date(System.currentTimeMillis() + joursPret);
                 if (livreExemplaire == null){
                     fairePret.setText("Réséerver Livre");
-
                 }
                 else{
                     defineIdLocation();
@@ -131,12 +115,8 @@ public class SpaceDisponibiliteLivre extends AppCompatActivity {
                     Intent intent = new Intent(SpaceDisponibiliteLivre.this, Accueil.class);
                     startActivity(intent);
                 }
-
-                //Intent intent = new Intent(Accueil.this, SpaceClient.class);
-                //startActivity(intent);
             }
         });
-
 
     }
 
@@ -160,10 +140,7 @@ public class SpaceDisponibiliteLivre extends AppCompatActivity {
                     Statement stmt;
                     stmt = con.createStatement();
 
-
                    LivreExPret lv;
-
-
 
                     ResultSet rs = stmt.executeQuery("SELECT * FROM livrelocation WHERE titre = '" + LivreExemplaire.livreEx +
                             "'");
@@ -176,14 +153,10 @@ public class SpaceDisponibiliteLivre extends AppCompatActivity {
                         lv.setAdresse_ex(rs.getString("adresse_ex"));
                         lv.setNum_exemplaire(rs.getString("num_exemplaire"));
 
-
                         livreExemplaire.add(lv);
-
-
                     }
 
                     rs.close();
-
 
                     stmt.close();
                     con.close();
@@ -193,7 +166,6 @@ public class SpaceDisponibiliteLivre extends AppCompatActivity {
                         public void run() {
                             /*Toast.makeText(getApplicationContext(), "Connection good" + livreExemplaire ,
                                     Toast.LENGTH_LONG).show();*/
-
                         }
                     });
                 } catch (Exception e) {
@@ -211,8 +183,6 @@ public class SpaceDisponibiliteLivre extends AppCompatActivity {
         });
         thread.start();
     }
-
-
 
     private int defineIdLocation() {
         int idLocation = 0;
@@ -241,7 +211,6 @@ public class SpaceDisponibiliteLivre extends AppCompatActivity {
         }
         return idLocation;
     }
-
 
     public void ajouterLocation() {
         String queryAjouterClient = "INSERT INTO location (id_location, dtDebut, id_client, num_ex, dtFin) " +

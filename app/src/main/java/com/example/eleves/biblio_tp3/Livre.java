@@ -1,11 +1,10 @@
 package com.example.eleves.biblio_tp3;
 
 import java.util.Arrays;
-
 /**
- * Created by eleves on 7/31/2017.
+ * Created by Diana on 7/31/2017.
  */
-
+//  ----------------------------- Objet Livre  -----------------------------
 public class Livre {
 
     private String ISBN;

@@ -1,9 +1,9 @@
 package com.example.eleves.biblio_tp3;
-
 /**
- * Created by eleves on 2017-09-02.
+ * Created by Diana on 7/31/2017.
  */
 
+//  ----------------------------- Objet LivreExPret  -----------------------------
 public class LivreExPret {
 
     private String num_exemplaire;

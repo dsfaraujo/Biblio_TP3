@@ -1,4 +1,7 @@
 package com.example.eleves.biblio_tp3;
+/**
+ * Created by Diana on 7/31/2017.
+ */
 
 import android.content.Intent;
 import android.os.Parcelable;
@@ -29,19 +32,17 @@ import java.util.Objects;
 import static com.example.eleves.biblio_tp3.Livros.livres;
 import static com.example.eleves.biblio_tp3.R.id.parent;
 
-
-
+//  ----------------------------- Classe cliente-----------------------------
 class cliente{
     static public  List<Client> client = new ArrayList<Client>();
     static public  Client cli = new Client();
 }
-
-
+//  ----------------------------- Classe Livros  -----------------------------
 class Livros {
    static public  List<Livre> livres = new ArrayList<Livre>();
     static public  Livre livre;
 }
-
+//  ----------------------------- Classe  Accueil -----------------------------
 public class Accueil extends AppCompatActivity {
 
     final String valeurChercher = " ";
@@ -50,13 +51,9 @@ public class Accueil extends AppCompatActivity {
     String info;
     int positionSpinner = 0;
     EditText text;
-
     Button client;
-  // static  List<Livre> livres = new ArrayList<Livre>();
     Button recherche;
     ArrayAdapter<Livre> adapter;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,12 +62,10 @@ public class Accueil extends AppCompatActivity {
         setTitle("Bibliothèque George-Étienne Cartier");
 
         connectMySQLClient();
-
         client = (Button)findViewById(R.id.spaceClient);
         recherche = (Button)findViewById(R.id.rechercherLivre);
 
         final ArrayList<Livre> listLivre = new ArrayList<>();
-
 
         //Spinner
         final Spinner spinner = (Spinner) findViewById(R.id.spinner2);

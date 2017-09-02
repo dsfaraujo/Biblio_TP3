@@ -3,9 +3,9 @@ package com.example.eleves.biblio_tp3;
 import java.util.List;
 
 /**
- * Created by eleves on 7/31/2017.
+ * Created by Diana on 7/31/2017.
  */
-
+//  ----------------------------- Objet Client  -----------------------------
 public class Client {
 
     private String id_client;

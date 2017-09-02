@@ -1,5 +1,7 @@
 package com.example.eleves.biblio_tp3;
-
+/**
+ * Created by Diana on 7/31/2017.
+ */
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +15,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 
+//  ----------------------------- Classe MainActivity  -----------------------------
 public class MainActivity extends AppCompatActivity {
 
     Button btPassword;
@@ -34,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         btPassword.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                if(user.getText().toString().equals("a") && password.getText().toString().equals("a")){
+                if(user.getText().toString().equals("admin") && password.getText().toString().equals("admin")){
 
                     Intent intent = new Intent(MainActivity.this, Accueil.class);
                     startActivity(intent);
